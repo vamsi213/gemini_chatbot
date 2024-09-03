@@ -1,10 +1,11 @@
 import streamlit as st
 import google.generativeai as genai
 
+
 st.title("Gemini AI Chatbot")
 
-f = open("E:\gemini_chatbot\keys\.gemimi_api_key.txt")
-key = f.read()
+#f = open("E:\gemini_chatbot\keys\.gemimi_api_key.txt")
+key = "AIzaSyDkiWeR_soldWbSUzPj4wk2wytgX8RWZeo"
 
 genai.configure(api_key=key)
 
@@ -12,8 +13,9 @@ genai.configure(api_key=key)
 
 
 model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
-                              system_instruction="""You are an AI Assistant who resolves any
-                                  Queries of the user.Your name is Pikachu.""")
+                              system_instruction="""You are an intelligent helpful AI assistant who do any
+                                  assignment,clarifies doubts
+                                 of the user.Your name is Pikachu.""")
 
 
 if "memory" not in st.session_state:
